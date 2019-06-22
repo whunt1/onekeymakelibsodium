@@ -58,7 +58,7 @@ Install_Libsodium(){
 		echo -e "${Info} 安装依赖..."
 		yum -y groupinstall "Development Tools"
 		echo -e "${Info} 下载..."
-		wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
+		wget  --no-check-certificate -N -O libsodium-${Libsodiumr_ver}.tar.gz "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 		if [[ -e libsodium-${Libsodiumr_ver}.tar.gz ]]; then
 			echo  -e "${Info} 下载成功..."
 		else
@@ -69,7 +69,7 @@ Install_Libsodium(){
 			else
 				echo  -e "${Error} 下载失败，尝试下载历史版本..."
 				Libsodiumr_ver=${Libsodiumr_ver_backup}
-				wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
+				wget  --no-check-certificate -N -O libsodium-${Libsodiumr_ver}.tar.gz "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 				[[ ! -e libsodium-${Libsodiumr_ver}.tar.gz ]] && echo -e "${Error} libsodium 下载失败 !" && exit 1
 			fi
 		fi
@@ -86,7 +86,7 @@ Install_Libsodium(){
 		echo -e "${Info} 安装依赖..."
 		apt-get install -y build-essential
 		echo -e "${Info} 下载..."
-		wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
+		wget  --no-check-certificate -N -O libsodium-${Libsodiumr_ver}.tar.gz "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 		if [[ -e libsodium-${Libsodiumr_ver}.tar.gz ]]; then
 			echo  -e "${Info} 下载成功..."
 		else
@@ -97,7 +97,7 @@ Install_Libsodium(){
 			else
 				echo  -e "${Error} 下载失败，尝试下载历史版本..."
 				Libsodiumr_ver=${Libsodiumr_ver_backup}
-				wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
+				wget  --no-check-certificate -N -O libsodium-${Libsodiumr_ver}.tar.gz "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 				[[ ! -e libsodium-${Libsodiumr_ver}.tar.gz ]] && echo -e "${Error} libsodium 下载失败 !" && exit 1
 			fi
 		fi
