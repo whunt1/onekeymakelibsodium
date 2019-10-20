@@ -57,6 +57,7 @@ Install_Libsodium(){
 		yum update
 		echo -e "${Info} 安装依赖..."
 		yum -y groupinstall "Development Tools"
+		yum install -y gcc
 		echo -e "${Info} 下载..."
 		wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 		if [[ -e libsodium-${Libsodiumr_ver}.tar.gz ]]; then
@@ -85,6 +86,7 @@ Install_Libsodium(){
 		apt-get update
 		echo -e "${Info} 安装依赖..."
 		apt-get install -y build-essential
+		apt-get install -y gcc
 		echo -e "${Info} 下载..."
 		wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
 		if [[ -e libsodium-${Libsodiumr_ver}.tar.gz ]]; then
